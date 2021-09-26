@@ -261,10 +261,9 @@ body {
     height: 560px;
   }
   .section2 .section2__divider {
-    background-position: left;
+    background-position: top left;
     background-size: 100%;
-    top: -3px;
-    background-repeat: repeat-x;
+    background-repeat: no-repeat;
     height: 40px;
   }
   .section2 .section2__img {
