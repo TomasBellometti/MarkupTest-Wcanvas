@@ -1,0 +1,244 @@
+$primary-color-font: #161616;
+$font-primary: "Yanone Kaffeesatz";
+$font-secondary: "Lato";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+@mixin bgCenter {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body {
+  background-color: #f8f8f8;
+}
+
+.header {
+  @include flexCenter(column);
+  position: relative;
+
+  margin-top: 72px;
+  margin-bottom: 24px;
+  color: $primary-color-font;
+
+  #{&}__subtitle {
+    font-family: $font-secondary;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 50px;
+    z-index: 3;
+  }
+  #{&}__title {
+    font-family: $font-primary;
+    font-size: 40px;
+    font-weight: 400;
+    // line-height: 60px;
+    z-index: 3;
+  }
+  #{&}__title--bold {
+    font-weight: 700;
+  }
+  #{&}__rectangle {
+    width: 228px;
+    height: 25px;
+    background-color: #e7e7e7;
+    position: absolute;
+    z-index: 0;
+    bottom: -5px;
+  }
+}
+
+.slider {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+  #{&}__item {
+    @include flexCenter(column);
+  }
+  #{&}__img {
+    width: 343px;
+  }
+  #{&}__title {
+    text-align: center;
+    font-family: $font-primary;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 1px;
+  }
+  #{&}__subtitle {
+    font-family: $font-secondary;
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  #{&}__arrow {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #a8a8a8;
+    border-radius: 50%;
+    position: absolute;
+    top: 180px;
+    z-index: 4;
+    cursor: pointer;
+    background-image: url(./../assets/img/arrow.svg);
+    @include bgCenter;
+
+    &--right {
+      right: 0px;
+    }
+    &--left {
+      left: 0px;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.section2 {
+  height: 741px;
+  background-color: #ec4133;
+  position: relative;
+  @include flexCenter(column);
+  justify-content: flex-start;
+
+  #{&}__divider {
+    background-image: url(./../assets/img/wave.png);
+    width: 100%;
+    height: 32px;
+    position: absolute;
+    top: -2px;
+    background-position: 20%;
+  }
+  #{&}__img {
+    width: 158px;
+    height: 158px;
+    margin-top: 60px;
+    margin-bottom: 22px;
+  }
+  #{&}__title {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    line-height: 47px;
+    width: 200px;
+  }
+  #{&}__title--bold {
+    font-weight: 700;
+  }
+  #{&}__text {
+    width: 290px;
+    font-family: $font-secondary;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+
+    margin-top: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header {
+    align-items: flex-start;
+    margin-left: 120px;
+    margin-top: 160px;
+    margin-bottom: 60px;
+
+    #{&}__subtitle {
+      font-size: 18px;
+    }
+    #{&}__title {
+      font-size: 75px;
+    }
+    #{&}__rectangle {
+      width: 390px;
+      height: 42px;
+      left: -25px;
+    }
+  }
+  .section1 {
+    &__draw {
+      width: 270px;
+      height: 210px;
+      background-image: url(./../assets/img/draw.svg);
+      position: absolute;
+      right: 95px;
+      top: 175px;
+    }
+    .slider {
+      margin-bottom: 160px;
+      &__item {
+        width: 265px;
+      }
+      &__img {
+        width: 265px;
+      }
+      &__title {
+        text-align: left;
+        font-size: 26px;
+        align-self: flex-start;
+      }
+      &__subtitle {
+        text-align: left;
+        align-self: flex-start;
+      }
+      .slick-dots {
+        bottom: -100px;
+
+        li {
+          width: 13px;
+          button {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #ec4133;
+            opacity: 30%;
+
+            &:before {
+              content: "";
+            }
+          }
+        }
+        .slick-active {
+          width: 26px;
+          button {
+            width: 26px;
+            border-radius: 7px;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .section2 {
+    height: 560px;
+    #{&}__divider {
+      background-position: left;
+      background-size: 100%;
+      top: -3px;
+      background-repeat: repeat-x;
+      height: 40px;
+    }
+    #{&}__img {
+      margin-top: 105px;
+      margin-bottom: 30px;
+    }
+    #{&}__title {
+      width: 100%;
+    }
+    #{&}__text {
+      width: 100%;
+    }
+  }
+}
