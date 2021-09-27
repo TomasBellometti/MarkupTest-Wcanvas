@@ -101,6 +101,32 @@ body {
       transform: rotate(180deg);
     }
   }
+  .slick-dots {
+    bottom: -100px;
+
+    li {
+      width: 13px;
+      button {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: #ec4133;
+        opacity: 30%;
+
+        &:before {
+          content: "";
+        }
+      }
+    }
+    .slick-active {
+      width: 26px;
+      button {
+        width: 26px;
+        border-radius: 7px;
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .section2 {
@@ -191,32 +217,6 @@ body {
       &__subtitle {
         text-align: left;
         align-self: flex-start;
-      }
-      .slick-dots {
-        bottom: -100px;
-
-        li {
-          width: 13px;
-          button {
-            width: 13px;
-            height: 13px;
-            border-radius: 50%;
-            background: #ec4133;
-            opacity: 30%;
-
-            &:before {
-              content: "";
-            }
-          }
-        }
-        .slick-active {
-          width: 26px;
-          button {
-            width: 26px;
-            border-radius: 7px;
-            opacity: 1;
-          }
-        }
       }
     }
   }
